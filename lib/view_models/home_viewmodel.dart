@@ -9,7 +9,7 @@ class HomeViewModel extends ChangeNotifier {
   bool isLoading = false;
   List<Post> items = [];
 
-  void apiPostList() async {
+  Future apiPostList() async {
     isLoading = true;
     notifyListeners();
 
@@ -24,7 +24,7 @@ class HomeViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void apiPostDelete(Post post) async {
+  Future apiPostDelete(Post post) async {
     isLoading = true;
     notifyListeners();
     var response = await Network.DEL(
